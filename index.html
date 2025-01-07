@@ -1,14 +1,141 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ru" data-critters-container>
-    <head>
-        <meta charset="utf-8">
-        <title>WebChat</title>
-        <base href="/">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <style>html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}*,:after,:before{box-sizing:border-box}:root{--accent-50: #E9F0F6;--accent-100: #DBE6F0;--accent-200: #C7E4FF;--accent-300: #B2DAFF;--accent-400: #BBDAF7;--accent-450: #9ED0FF;--accent-500: #75B0E7;--accent-550: #6096ff;--accent-600: #2F75B7;--accent-650: #245dcd;--accent-700: #2681D7;--accent-750: #275580;--accent-800: #2066A8;--accent-850: #3F6385;--accent-900: #0E4D89;--accent-950: #11416F;--accent-1000: #0B355D;--accent-1050: #0c305a;--accent-1100: #092648}:root{--white: #fff;--gray-25: #FAFAFA;--gray-30: #F1F1F1;--gray-50: #F5F5F5;--gray-100: #EFF0F0;--gray-150: #EAECEC;--gray-200: #DFE1E1;--gray-250: #C5C9C9;--gray-300: #B1B5B5;--gray-350: #919797;--gray-400: #868E8E;--gray-450: #5E6464;--gray-500: #404444;--gray-550: #3B3F3F;--gray-600: #313434;--gray-700: #282A2A;--gray-750: #232525;--gray-800: #1E2020;--gray-850: #161818;--gray-900: #0F0F0F;--black: #000;--gray-transparent-2: rgba(0, 0, 0, .0241);--gray-transparent-5: rgba(0, 0, 0, .0578);--gray-transparent-10: rgba(0, 0, 0, .0924);--gray-transparent-20: rgba(0, 0, 0, .2);--gray-transparent-30: rgba(0, 0, 0, .3)}:root{--support-01: #DA1E28;--support-02: #24A148;--support-03: #F1C21B;--support-04: #0043CE;--inverse-support-01: #FA4D56;--inverse-support-02: #42BE65;--inverse-support-03: #e4c452;--inverse-support-04: #4589FF;--light-support-01: #FFF1F1;--light-support-02: #DEFBE6;--light-support-03: #FFF8E1;--light-support-04: #EDF5FF;--dark-support-01: #411A22;--dark-support-02: #0B330B;--dark-support-03: #573E05;--dark-support-04: #052057;--link: #488CE4;--link-hover: #3365A8}@font-face{font-family:Montserrat;src:url(/assets/fonts/montserrat/Montserrat-Regular.woff2) format("woff2");font-style:normal;font-weight:400}@font-face{font-family:Montserrat;src:url(/assets/fonts/montserrat/Montserrat-Medium.woff2) format("woff2");font-style:normal;font-weight:500}@font-face{font-family:Montserrat;src:url(/assets/fonts/montserrat/Montserrat-SemiBold.woff2) format("woff2");font-style:normal;font-weight:600}@font-face{font-family:Montserrat;src:url(/assets/fonts/montserrat/Montserrat-Bold.woff2) format("woff2");font-style:normal;font-weight:700}html,body{font-family:Montserrat;background-color:var(--gray-700);color:var(--gray-100)}
-</style><link rel="stylesheet" href="styles-465UJNB6.css" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="styles-465UJNB6.css"></noscript><link rel="modulepreload" href="chunk-YJPUX3FE.js"><link rel="modulepreload" href="chunk-WXI33M2S.js"><link rel="modulepreload" href="chunk-BQNWQ6CD.js"></head>
-    <body>
-        <app-root></app-root>
-    <script src="polyfills-SCHOHYNV.js" type="module"></script><script src="main-SHTXZKV7.js" type="module"></script></body>
+  <head>
+    <meta charset="utf-8" />
+    <title>WebChat</title>
+    <base href="/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <style>
+      html {
+        line-height: 1.15;
+        -webkit-text-size-adjust: 100%;
+      }
+      body {
+        margin: 0;
+      }
+      *,
+      :after,
+      :before {
+        box-sizing: border-box;
+      }
+      :root {
+        --accent-50: #e9f0f6;
+        --accent-100: #dbe6f0;
+        --accent-200: #c7e4ff;
+        --accent-300: #b2daff;
+        --accent-400: #bbdaf7;
+        --accent-450: #9ed0ff;
+        --accent-500: #75b0e7;
+        --accent-550: #6096ff;
+        --accent-600: #2f75b7;
+        --accent-650: #245dcd;
+        --accent-700: #2681d7;
+        --accent-750: #275580;
+        --accent-800: #2066a8;
+        --accent-850: #3f6385;
+        --accent-900: #0e4d89;
+        --accent-950: #11416f;
+        --accent-1000: #0b355d;
+        --accent-1050: #0c305a;
+        --accent-1100: #092648;
+      }
+      :root {
+        --white: #fff;
+        --gray-25: #fafafa;
+        --gray-30: #f1f1f1;
+        --gray-50: #f5f5f5;
+        --gray-100: #eff0f0;
+        --gray-150: #eaecec;
+        --gray-200: #dfe1e1;
+        --gray-250: #c5c9c9;
+        --gray-300: #b1b5b5;
+        --gray-350: #919797;
+        --gray-400: #868e8e;
+        --gray-450: #5e6464;
+        --gray-500: #404444;
+        --gray-550: #3b3f3f;
+        --gray-600: #313434;
+        --gray-700: #282a2a;
+        --gray-750: #232525;
+        --gray-800: #1e2020;
+        --gray-850: #161818;
+        --gray-900: #0f0f0f;
+        --black: #000;
+        --gray-transparent-2: rgba(0, 0, 0, 0.0241);
+        --gray-transparent-5: rgba(0, 0, 0, 0.0578);
+        --gray-transparent-10: rgba(0, 0, 0, 0.0924);
+        --gray-transparent-20: rgba(0, 0, 0, 0.2);
+        --gray-transparent-30: rgba(0, 0, 0, 0.3);
+      }
+      :root {
+        --support-01: #da1e28;
+        --support-02: #24a148;
+        --support-03: #f1c21b;
+        --support-04: #0043ce;
+        --inverse-support-01: #fa4d56;
+        --inverse-support-02: #42be65;
+        --inverse-support-03: #e4c452;
+        --inverse-support-04: #4589ff;
+        --light-support-01: #fff1f1;
+        --light-support-02: #defbe6;
+        --light-support-03: #fff8e1;
+        --light-support-04: #edf5ff;
+        --dark-support-01: #411a22;
+        --dark-support-02: #0b330b;
+        --dark-support-03: #573e05;
+        --dark-support-04: #052057;
+        --link: #488ce4;
+        --link-hover: #3365a8;
+      }
+      @font-face {
+        font-family: Montserrat;
+        src: url(./webchat-page/assets/fonts/montserrat/Montserrat-Regular.woff2)
+          format("woff2");
+        font-style: normal;
+        font-weight: 400;
+      }
+      @font-face {
+        font-family: Montserrat;
+        src: url(./webchat-page/assets/fonts/montserrat/Montserrat-Medium.woff2)
+          format("woff2");
+        font-style: normal;
+        font-weight: 500;
+      }
+      @font-face {
+        font-family: Montserrat;
+        src: url(./webchat-page/assets/fonts/montserrat/Montserrat-SemiBold.woff2)
+          format("woff2");
+        font-style: normal;
+        font-weight: 600;
+      }
+      @font-face {
+        font-family: Montserrat;
+        src: url(./webchat-page/assets/fonts/montserrat/Montserrat-Bold.woff2) format("woff2");
+        font-style: normal;
+        font-weight: 700;
+      }
+      html,
+      body {
+        font-family: Montserrat;
+        background-color: var(--gray-700);
+        color: var(--gray-100);
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="./webchat-page/styles-465UJNB6.css"
+      media="print"
+      onload="this.media='all'"
+    />
+    <noscript><link rel="stylesheet" href="./webchat-page/styles-465UJNB6.css" /></noscript>
+    <link rel="modulepreload" href="./webchat-page/chunk-YJPUX3FE.js" />
+    <link rel="modulepreload" href="./webchat-page/chunk-WXI33M2S.js" />
+    <link rel="modulepreload" href="./webchat-page/chunk-BQNWQ6CD.js" />
+  </head>
+  <body>
+    <app-root></app-root>
+    <script src="./webchat-page/polyfills-SCHOHYNV.js" type="module"></script>
+    <script src="./webchat-page/main-SHTXZKV7.js" type="module"></script>
+  </body>
 </html>
